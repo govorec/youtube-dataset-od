@@ -3,6 +3,7 @@ import cv2
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
 import glob
+import os
 
 import torch
 
@@ -12,14 +13,9 @@ import fiftyone.utils.random as four
 
 import pandas as pd
 
-
-# Взяти за джерело даних youtube та зібрати збалансований датасет для тренування та валідації моделі для вирішення задачі object detection для трьох класів [person, car, pet] (person - люди, car - всі дорожні авто, pet - всі домашні тварини)
-# Реалізація збору даних з ресурсу на вибір, плюсом буде реалізований пайплайн;
-# Розбити відео на фрейми, в результаті має буде до 5к зображень;
-# Розмітку зробити за допомогою загально доступної object detection моделі (автолейблінг);
-# Датасет розподілити на train/val частини;
-# Реалізувати код для аналізу створеного датасету, який відображає розподіл даних; 
-# Опрацювання датасета реалізувати через fiftyone і зберегти у форматі COCO.
+os.makedirs('data/videos', exist_ok=True)
+os.makedirs('data/frames', exist_ok=True)
+os.makedirs('dataset', exist_ok=True)
 
 # List of video links to collect
 video_urls = [
