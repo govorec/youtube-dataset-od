@@ -1,0 +1,8 @@
+.conda
+.venv
+
+/data
+/dataset
+output
+
+yolov5s.pt

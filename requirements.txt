@@ -1,0 +1,11 @@
+torch
+torchvision
+torchaudio
+
+ultralytics
+gitpython>=3.1.30
+
+yt-dlp
+fiftyone
+
+pandas
